@@ -1,0 +1,193 @@
+/* Importação de fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-color: #0b0e14;
+    --card-bg: #161b22;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --accent-color: #58a6ff; /* Azul Tech */
+    --gradient-accent: linear-gradient(45deg, #58a6ff, #bc8cf2);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* --- Navegação --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(11, 14, 20, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid #30363d;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Seções Gerais --- */
+section {
+    padding: 100px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Home --- */
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil {
+    border-radius: 50%;
+    border: 4px solid var(--card-bg);
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    margin-bottom: 20px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.perfil:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.4);
+}
+
+#home h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+#home p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* --- Resumo --- */
+#resumo p {
+    background: var(--card-bg);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* --- Projetos (Grid) --- */
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.projeto {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid #30363d;
+}
+
+.projeto:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.projeto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.projeto a {
+    display: block;
+    padding: 15px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Contato --- */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social a {
+    padding: 10px 25px;
+    background: var(--card-bg);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 30px;
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.social a:hover {
+    background: var(--gradient-accent);
+    color: white;
+    border-color: transparent;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 40px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-top: 1px solid #30363d;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #home h1 { font-size: 2rem; }
+    .perfil { width: 250px; height: 250px; }
+}
